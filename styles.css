@@ -50,15 +50,10 @@ body {
   transition: background 0.5s;
 }
 
-.test {
-  width: 50px;
-  height: 50px;
-  background-color: aquamarine;
-}
-
 .info {
   width: 25px;
   height: 25px;
+  cursor: help;
   align-items: center;
   justify-content: center;
   display: flex;
