@@ -21,10 +21,21 @@ document.addEventListener('click', (event) => {
     copyToClickboard(event.target.textContent)
   } else if (type === 'info') {
     const info = document.getElementById('info-text')
-    info.classList.toggle('hiden-info')
+    info.classList.toggle('hidden-info')
     info.classList.toggle('shown-info')
   }
 })
+
+function setAnimationOn(id) {
+  const element = document.getElementById(id.toString())
+  element.classList.remove('copied-animation-container_hidden')
+  element.classList.add('copied-animation-container_visible')
+  const toggleStyle = () => {
+    element.classList.remove('copied-animation-container_visible')
+    element.classList.add('copied-animation-container_hidden')
+  }
+  setTimeout(toggleStyle, 1500)
+}
 
 function generateRundomColor() {
   const hexCodes = '0123456789ABCDEF'

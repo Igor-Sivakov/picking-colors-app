@@ -9,6 +9,7 @@
 body {
   display: flex;
   height: 100vh;
+  min-width: 600px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -20,8 +21,17 @@ body {
   flex-direction: column;
 }
 
+.column-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 .column h2 {
   padding: 10px;
+  margin-bottom: 10px;
   color: #fff;
   border-radius: 10px;
   transition: background 0.5s;
@@ -30,6 +40,54 @@ body {
 .column h2:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.copied-animation-block {
+  width: 80px;
+  height: 25px;
+  font-size: 14px;
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d2939c1;
+}
+
+.copied-animation-container_hidden {
+  opacity: 0;
+}
+
+.copied-animation-container_visible {
+  animation-name: show-in, show-out;
+  animation-duration: 1s, 0.5s;
+  animation-delay: 0s, 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .btn {
@@ -69,8 +127,9 @@ body {
 .shown-info {
   position: absolute;
   line-height: 1.5rem;
-  width: 900px;
-  height: 140px;
+  width: 90%;
+  min-width: 500px;
+  min-height: 140px;
   font-size: 14px;
   background-color: #1d2939;
   color: #fff;
@@ -81,7 +140,7 @@ body {
   transition: 0.7s;
 }
 
-.hiden-info {
+.hidden-info {
   position: absolute;
   top: 10px;
   right: 60px;
